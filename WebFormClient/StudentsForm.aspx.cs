@@ -28,6 +28,18 @@ namespace WebFormClient
             {
                 lblKet.Text = "Gagal request data";
             }
+
+            var request2 = new RestRequest("/api/Enrollments",Method.GET);
+            var response2 = client.Execute<List<Enrollment>>(request2);
+            if (response2.StatusCode == System.Net.HttpStatusCode.OK)
+            {
+                gvEnrollment.DataSource = response2.Data;
+                gvEnrollment.DataBind();
+
+                lblKet.Text = response2.Data[0].Student.FirstMidName + " - " +
+                    response2.Data[0].Course.Title;
+            }
+
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)

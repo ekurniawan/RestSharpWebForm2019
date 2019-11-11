@@ -3,7 +3,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
-        
         <div class="col-md-6">
             <h2>Daftar Mahasiswa</h2>
             <asp:GridView runat="server" ID="gvStudents" CssClass="table table-striped">
@@ -37,6 +36,12 @@
                 CssClass="btn btn-default" runat="server" OnClick="btnSubmit_Click" />
             <asp:Button Text="Edit" ID="btnEdit" CssClass="btn btn-primary" runat="server" OnClick="btnEdit_Click" />
             <asp:Button Text="Delete" CssClass="btn btn-danger" runat="server" ID="btnDelete" OnClick="btnDelete_Click" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <asp:GridView CssClass="table table-striped" ID="gvEnrollment" runat="server" >
+            </asp:GridView>
         </div>
     </div>
 </asp:Content>
