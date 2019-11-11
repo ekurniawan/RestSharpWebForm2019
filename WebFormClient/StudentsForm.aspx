@@ -1,4 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="StudentsForm.aspx.cs" Inherits="WebFormClient.StudentsForm" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" 
+     CodeBehind="StudentsForm.aspx.cs" ViewStateMode="Disabled" EnableViewState="false" Inherits="WebFormClient.StudentsForm" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
@@ -35,6 +36,7 @@
             <asp:Button Text="Submit" ID="btnSubmit" 
                 CssClass="btn btn-default" runat="server" OnClick="btnSubmit_Click" />
             <asp:Button Text="Edit" ID="btnEdit" CssClass="btn btn-primary" runat="server" OnClick="btnEdit_Click" />
+            <asp:Button Text="Delete" CssClass="btn btn-danger" runat="server" ID="btnDelete" OnClick="btnDelete_Click" />
         </div>
     </div>
 </asp:Content>

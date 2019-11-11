@@ -89,5 +89,22 @@ namespace WebFormClient
                 lblKet.Text = $"Data gagal diedit {ex.Message}";
             }
         }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            var id = txtID.Text;
+            var client = new RestClient("https://localhost:44319");
+            var request = new RestRequest($"/api/Students/{id}", Method.DELETE);
+
+            try
+            {
+                var response = client.Execute(request);
+                lblKet.Text = "Data berhasil didelete";
+            }
+            catch (Exception ex)
+            {
+                lblKet.Text = $"Data gagal di delete {ex.Message}";
+            }
+        }
     }
 }
